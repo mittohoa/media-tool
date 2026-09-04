@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chính sách bảo mật — Media Hub &amp; Winnow</title>
+<meta name="description" content="Chính sách bảo mật của ứng dụng Media Hub (Android, com.mediahub.mobile) và Winnow (Windows): dữ liệu nào ở lại trên máy, dữ liệu nào được gửi đi và gửi cho ai.">
+<link rel="icon" href="./assets/winnow.png">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <a class="home" href="./"><img src="./assets/winnow.png" alt=""> Media Hub</a>
+  <div class="links">
+    <a href="./">Trang chủ</a>
+    <a href="./privacy.html" aria-current="page">Bảo mật</a>
+    <a href="./data-safety.html">Dữ liệu thu thập</a>
+  </div>
+</div></nav>
+
+<main class="doc">
+
+<h1>Chính sách bảo mật</h1>
+<p class="updated">
+  Áp dụng cho <b>Media Hub</b> (Android, <code>com.mediahub.mobile</code>) và
+  <b>Winnow</b> (Windows).<br>
+  Có hiệu lực từ 04/09/2026 · Cập nhật lần cuối 04/09/2026
+</p>
+
+<div class="note">
+  <b>Tóm tắt một câu:</b> chúng tôi không vận hành máy chủ nào, không có tài khoản người
+  dùng, và không nhận được bất kỳ dữ liệu nào của bạn. Ảnh, video, nhạc và mọi thiết lập
+  đều nằm trên thiết bị của bạn. Dữ liệu chỉ rời khỏi máy khi chính bạn bật một tính năng
+  AI trực tuyến và xác nhận từng lần.
+</div>
+
+<div class="toc">
+  <b>Nội dung</b>
+  <ol>
+    <li><a href="#ai">Ai chịu trách nhiệm</a></li>
+    <li><a href="#khong-thu-thap">Chúng tôi không thu thập gì</a></li>
+    <li><a href="#tren-may">Dữ liệu xử lý trên thiết bị</a></li>
+    <li><a href="#gui-di">Khi nào dữ liệu rời khỏi thiết bị</a></li>
+    <li><a href="#quyen">Các quyền ứng dụng xin và lý do</a></li>
+    <li><a href="#ben-thu-ba">Bên thứ ba</a></li>
+    <li><a href="#bao-mat">Bảo mật</a></li>
+    <li><a href="#xoa">Lưu trữ và xoá dữ liệu</a></li>
+    <li><a href="#tre-em">Trẻ em</a></li>
+    <li><a href="#winnow">Winnow trên Windows</a></li>
+    <li><a href="#thay-doi">Thay đổi chính sách</a></li>
+    <li><a href="#lien-he">Liên hệ</a></li>
+  </ol>
+</div>
+
+<h2 id="ai">1. Ai chịu trách nhiệm</h2>
+<p>
+  Media Hub và Winnow là phần mềm do cá nhân phát triển, phát hành dưới tài khoản
+  <a href="https://github.com/mittohoa">mittohoa</a>. Chính sách này mô tả cách hai ứng
+  dụng đó xử lý dữ liệu trên thiết bị của bạn.
+</p>
+<p>
+  Vì không có máy chủ nào của chúng tôi tham gia vào hoạt động của ứng dụng, trên thực tế
+  <b>bạn là người duy nhất nắm giữ dữ liệu của mình</b>.
+</p>
+
+<h2 id="khong-thu-thap">2. Chúng tôi không thu thập gì</h2>
+<p>Ứng dụng <b>không</b> có những thứ sau, và bạn có thể kiểm chứng bằng mã nguồn:</p>
+<ul>
+  <li>Không có tài khoản, không đăng ký, không đăng nhập</li>
+  <li>Không có máy chủ hay cơ sở dữ liệu nào của chúng tôi nhận dữ liệu</li>
+  <li>Không có công cụ phân tích hành vi (analytics), không có báo cáo sự cố tự động</li>
+  <li>Không có quảng cáo, không có mã theo dõi quảng cáo, không có định danh quảng cáo</li>
+  <li>Không thu thập vị trí thời gian thực</li>
+  <li>Không bán, không chia sẻ dữ liệu cho bất kỳ ai — vì chúng tôi không có dữ liệu để bán</li>
+</ul>
+
+<h2 id="tren-may">3. Dữ liệu xử lý trên thiết bị</h2>
+<p>
+  Ứng dụng đọc và xử lý những dữ liệu dưới đây, và tất cả đều nằm lại trong bộ nhớ máy bạn:
+</p>
+<ul>
+  <li>
+    <b>Ảnh, video và tệp âm thanh</b> trong thư viện: để hiển thị, sắp xếp theo ngày, xem,
+    cắt/xoay/nén, phát video và nhạc.
+  </li>
+  <li>
+    <b>Thông tin EXIF</b> của ảnh (ngày chụp, máy ảnh, thông số, và toạ độ nếu ảnh của bạn
+    có sẵn): để hiển thị và sắp xếp. Thông tin này được đọc từ chính tệp của bạn và không
+    được gửi đi đâu cả.
+  </li>
+  <li>
+    <b>Kết quả phân tích ảnh bằng AI trên máy</b>: nhận diện khuôn mặt, gắn nhãn chủ đề và
+    tách nền chạy bằng thư viện Google ML Kit ở chế độ on-device, không cần mạng. Ảnh không
+    được gửi đi trong quá trình này; kết quả lưu cục bộ.
+  </li>
+  <li>
+    <b>Thiết lập và lựa chọn của bạn</b>: mục yêu thích, bộ sưu tập, nhãn, danh sách trong
+    kho khoá. Lưu bằng cơ chế lưu trữ cục bộ của Android.
+  </li>
+</ul>
+
+<h2 id="gui-di">4. Khi nào dữ liệu rời khỏi thiết bị</h2>
+<p>Có đúng ba trường hợp, và không trường hợp nào gửi về phía chúng tôi:</p>
+
+<h3>4.1. Tính năng AI trực tuyến — bạn tự bật, tự dùng khoá của mình</h3>
+<p>
+  Ứng dụng có các tính năng tuỳ chọn như <i>mô tả ảnh</i>, <i>hỏi AI về ảnh</i>,
+  <i>tạo ảnh từ mô tả</i> và <i>chỉnh ảnh bằng AI</i>. Chỉ khi bạn dùng những tính năng
+  này, dữ liệu tương ứng mới được gửi thẳng từ máy bạn tới nhà cung cấp <b>bạn chọn</b>:
+</p>
+<ul>
+  <li><b>Tạo ảnh từ mô tả</b>: gửi đoạn mô tả bằng chữ bạn nhập.</li>
+  <li>
+    <b>Mô tả ảnh, hỏi AI về ảnh, chỉnh ảnh</b>: gửi chính bức ảnh bạn chọn cùng câu lệnh
+    của bạn.
+  </li>
+</ul>
+<p>
+  Kết nối đi trực tiếp từ thiết bị của bạn tới nhà cung cấp, dùng
+  <b>khoá API do bạn tự tạo và tự nhập</b>. Chúng tôi không đứng giữa, không thấy nội dung
+  và không nhận bản sao nào. Dữ liệu bạn gửi sẽ chịu sự điều chỉnh của chính sách bảo mật
+  của nhà cung cấp đó — xem mục <a href="#ben-thu-ba">Bên thứ ba</a>.
+</p>
+<p>
+  Nếu bạn không nhập khoá và không dùng những tính năng này, ứng dụng không gửi ảnh đi đâu cả.
+</p>
+
+<h3>4.2. Kiểm tra phiên bản mới</h3>
+<p>
+  Ứng dụng tải một tệp nhỏ chứa số phiên bản mới nhất từ GitHub Pages
+  (<code>mittohoa.github.io</code>) và tải tệp cài đặt từ GitHub Releases khi bạn đồng ý
+  cập nhật. Như mọi yêu cầu mạng, GitHub sẽ thấy địa chỉ IP và loại thiết bị của bạn trong
+  nhật ký máy chủ của họ. Yêu cầu này <b>không kèm theo</b> bất kỳ thông tin nào về ảnh hay
+  cách bạn dùng ứng dụng.
+</p>
+
+<h3>4.3. Khi chính bạn chia sẻ</h3>
+<p>
+  Khi bạn bấm chia sẻ một tấm ảnh sang ứng dụng khác, hoặc mở tệp bằng ứng dụng khác, dữ
+  liệu đi tới nơi bạn chỉ định theo cơ chế chia sẻ của Android. Việc này do bạn chủ động và
+  nằm ngoài phạm vi chính sách này.
+</p>
+
+<h2 id="quyen">5. Các quyền ứng dụng xin và lý do</h2>
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr><th>Quyền</th><th>Dùng để làm gì</th><th>Bắt buộc?</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ảnh và video<br>(<code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code>)</td>
+      <td>Đọc thư viện để hiển thị, sắp xếp và chỉnh sửa</td>
+      <td>Có — đây là chức năng chính</td>
+    </tr>
+    <tr>
+      <td>Âm thanh (<code>READ_MEDIA_AUDIO</code>)</td>
+      <td>Duyệt và phát nhạc trong máy</td>
+      <td>Có, cho phần nghe nhạc</td>
+    </tr>
+    <tr>
+      <td>Bộ nhớ (<code>READ/WRITE_EXTERNAL_STORAGE</code>)</td>
+      <td>Đọc và ghi tệp trên các phiên bản Android cũ</td>
+      <td>Chỉ trên Android cũ</td>
+    </tr>
+    <tr>
+      <td>Máy ảnh (<code>CAMERA</code>)</td>
+      <td>Quét mã QR trong ứng dụng</td>
+      <td class="no">Không — chỉ xin khi bạn mở tính năng quét</td>
+    </tr>
+    <tr>
+      <td>Sinh trắc học<br>(<code>USE_BIOMETRIC</code>, <code>USE_FINGERPRINT</code>)</td>
+      <td>Mở kho khoá bằng vân tay hoặc khoá màn hình</td>
+      <td class="no">Không — chỉ khi bạn dùng kho khoá</td>
+    </tr>
+    <tr>
+      <td>Internet (<code>INTERNET</code>)</td>
+      <td>Tính năng AI trực tuyến và kiểm tra cập nhật</td>
+      <td class="no">Không dùng nếu bạn không bật các tính năng đó</td>
+    </tr>
+    <tr>
+      <td>Cài đặt gói (<code>REQUEST_INSTALL_PACKAGES</code>)</td>
+      <td>Mở tệp cài đặt khi bạn chọn cập nhật ứng dụng</td>
+      <td class="no">Không — chỉ khi bạn bấm cập nhật</td>
+    </tr>
+    <tr>
+      <td>Dịch vụ nền<br>(<code>FOREGROUND_SERVICE</code>, <code>WAKE_LOCK</code>)</td>
+      <td>Phát nhạc tiếp tục khi bạn tắt màn hình</td>
+      <td class="no">Không — chỉ khi đang phát nhạc</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>
+  Dữ liệu sinh trắc học do hệ điều hành Android quản lý. Ứng dụng chỉ nhận kết quả
+  đúng hoặc sai từ hệ thống và <b>không bao giờ nhìn thấy hay lưu trữ</b> vân tay của bạn.
+</p>
+
+<h2 id="ben-thu-ba">6. Bên thứ ba</h2>
+<p>
+  Ứng dụng không nhúng bộ công cụ quảng cáo hay phân tích nào. Các dịch vụ dưới đây chỉ
+  được liên hệ trong đúng những trường hợp đã nêu ở mục 4:
+</p>
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr><th>Dịch vụ</th><th>Khi nào</th><th>Nhận được gì</th><th>Chính sách của họ</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OpenAI</td>
+      <td>Bạn chọn OpenAI cho tính năng AI</td>
+      <td>Ảnh hoặc câu lệnh bạn gửi</td>
+      <td><a href="https://openai.com/policies/privacy-policy">openai.com</a></td>
+    </tr>
+    <tr>
+      <td>Google Gemini API</td>
+      <td>Bạn chọn Gemini cho tính năng AI</td>
+      <td>Ảnh hoặc câu lệnh bạn gửi</td>
+      <td><a href="https://policies.google.com/privacy">policies.google.com</a></td>
+    </tr>
+    <tr>
+      <td>Hugging Face</td>
+      <td>Bạn chọn Hugging Face cho tính năng AI</td>
+      <td>Ảnh hoặc câu lệnh bạn gửi</td>
+      <td><a href="https://huggingface.co/privacy">huggingface.co</a></td>
+    </tr>
+    <tr>
+      <td>Pollinations.ai</td>
+      <td>Bạn dùng tạo ảnh miễn phí, không cần khoá</td>
+      <td>Đoạn mô tả bằng chữ bạn nhập</td>
+      <td><a href="https://pollinations.ai">pollinations.ai</a></td>
+    </tr>
+    <tr>
+      <td>GitHub</td>
+      <td>Kiểm tra và tải bản cập nhật</td>
+      <td>Địa chỉ IP trong nhật ký máy chủ</td>
+      <td><a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">github.com</a></td>
+    </tr>
+    <tr>
+      <td>Google ML Kit</td>
+      <td>Gắn nhãn, nhận diện khuôn mặt, tách nền</td>
+      <td class="no">Không có gì — mô hình chạy ngoại tuyến trên máy</td>
+      <td><a href="https://developers.google.com/ml-kit/terms">developers.google.com</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="bao-mat">7. Bảo mật</h2>
+<ul>
+  <li>
+    <b>Kho khoá</b>: tệp bạn đưa vào được mã hoá AES-256 và cất trong vùng lưu trữ riêng
+    của ứng dụng, bản gốc bị xoá khỏi thư viện chung. Mở khoá bằng vân tay hoặc khoá màn hình.
+  </li>
+  <li>
+    <b>Khoá API của bạn</b> được lưu bằng kho lưu trữ an toàn của hệ điều hành
+    (Android Keystore, qua <code>EncryptedSharedPreferences</code>), không lưu dưới dạng
+    văn bản thường và không được gửi cho ai ngoài chính nhà cung cấp AI mà nó thuộc về.
+  </li>
+  <li>Mọi kết nối ra ngoài đều dùng HTTPS.</li>
+</ul>
+<p>
+  Cần nói thẳng: vì dữ liệu nằm trên máy bạn, mức an toàn cuối cùng phụ thuộc vào việc
+  thiết bị của bạn có được khoá màn hình và mã hoá hay không. Chúng tôi không có bản sao
+  nào để khôi phục nếu bạn mất máy.
+</p>
+
+<h2 id="xoa">8. Lưu trữ và xoá dữ liệu</h2>
+<p>
+  Chúng tôi không lưu trữ dữ liệu của bạn nên không có gì để yêu cầu chúng tôi xoá. Bạn
+  toàn quyền xoá dữ liệu cục bộ bất cứ lúc nào:
+</p>
+<ul>
+  <li>
+    <b>Xoá thiết lập và dữ liệu ứng dụng</b>: Cài đặt → Ứng dụng → Media Hub → Bộ nhớ →
+    Xoá dữ liệu. Thao tác này xoá cả nội dung trong kho khoá, hãy đưa tệp ra ngoài trước.
+  </li>
+  <li>
+    <b>Xoá khoá API</b>: xoá trong màn hình cài đặt của ứng dụng, hoặc xoá dữ liệu ứng dụng
+    như trên.
+  </li>
+  <li>
+    <b>Gỡ ứng dụng</b>: xoá toàn bộ dữ liệu ứng dụng khỏi máy. Ảnh trong thư viện chung của
+    bạn không bị ảnh hưởng.
+  </li>
+  <li>
+    <b>Dữ liệu đã gửi tới nhà cung cấp AI</b>: yêu cầu xoá theo quy trình của chính nhà
+    cung cấp đó, bằng tài khoản mà bạn đã tạo khoá API.
+  </li>
+</ul>
+
+<h2 id="tre-em">9. Trẻ em</h2>
+<p>
+  Ứng dụng không hướng tới trẻ em dưới 13 tuổi và không cố ý thu thập dữ liệu của trẻ em.
+  Vì ứng dụng không thu thập dữ liệu của bất kỳ ai, không có hồ sơ trẻ em nào tồn tại để
+  xoá. Phụ huynh nên lưu ý rằng các tính năng AI trực tuyến gửi ảnh tới dịch vụ bên thứ ba
+  và nên cân nhắc không cấu hình khoá API trên thiết bị của trẻ.
+</p>
+
+<h2 id="winnow">10. Winnow trên Windows</h2>
+<p>
+  Winnow là ứng dụng máy tính tìm ảnh trùng. Nó <b>không chứa mã gọi mạng</b>: không kiểm
+  tra cập nhật trực tuyến, không gửi số liệu sử dụng, không có tài khoản.
+</p>
+<ul>
+  <li>
+    Danh mục ảnh (đường dẫn, dung lượng, mã băm, thông tin EXIF) lưu trong một tệp SQLite
+    tại <code>%LOCALAPPDATA%\Winnow\catalog.db</code> trên chính máy bạn.
+  </li>
+  <li>
+    Winnow không xoá ảnh. Tệp bị coi là thừa được <b>chuyển vào thư mục cách ly</b> kèm
+    bản kê, và hoàn tác được cho tới khi bạn tự gõ lệnh xoá hẳn sau thời gian chờ mặc định
+    14 ngày.
+  </li>
+  <li>
+    Muốn xoá sạch dấu vết: gỡ ứng dụng và xoá thư mục <code>%LOCALAPPDATA%\Winnow</code>.
+  </li>
+</ul>
+
+<h2 id="thay-doi">11. Thay đổi chính sách</h2>
+<p>
+  Khi chính sách thay đổi, bản mới sẽ được đăng tại chính trang này kèm ngày cập nhật.
+  Nếu có thay đổi làm phát sinh việc thu thập dữ liệu mà trước đây không có, thông báo sẽ
+  hiện trong ứng dụng trước khi tính năng đó hoạt động.
+</p>
+
+<h2 id="lien-he">12. Liên hệ</h2>
+<p>
+  Câu hỏi về quyền riêng tư, hoặc báo một điểm bạn thấy chưa đúng trong tài liệu này:
+</p>
+<ul>
+  <li>Email: <a href="mailto:mittohoa@gmail.com">mittohoa@gmail.com</a></li>
+  <li>
+    GitHub:
+    <a href="https://github.com/mittohoa/media-tool/issues">github.com/mittohoa/media-tool/issues</a>
+  </li>
+</ul>
+
+<h2 id="english">English summary</h2>
+<p>
+  <b>Media Hub</b> (Android, <code>com.mediahub.mobile</code>) and <b>Winnow</b> (Windows)
+  collect nothing. There is no account, no server of ours, no analytics, no advertising and
+  no crash reporting. Your photos, videos, audio and settings stay on your device.
+</p>
+<p>
+  Photo analysis — face detection, subject labelling and background removal — runs
+  on-device with Google ML Kit; images are not uploaded for it. Data leaves the device in
+  only three cases: (1) optional online AI features that you enable and that send the image
+  or prompt you choose <i>directly</i> to the provider you pick, using an API key you supply
+  yourself; (2) an update check that fetches a version file from GitHub, which sees only
+  your IP address as any web request would; (3) content you actively share to another app.
+  We are not a party to any of these transfers and never receive a copy.
+</p>
+<p>
+  Vault files are encrypted with AES-256 and unlocked with your device biometrics; your API
+  key is stored in the Android Keystore. To delete everything, clear the app's data or
+  uninstall it. Contact: <a href="mailto:mittohoa@gmail.com">mittohoa@gmail.com</a>.
+</p>
+
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Media Hub</span>
+  <div class="links">
+    <a href="./">Trang chủ</a>
+    <a href="./data-safety.html">Dữ liệu thu thập</a>
+    <a href="https://github.com/mittohoa/media-tool">Mã nguồn</a>
+  </div>
+</div></footer>
+
+</body>
+</html>

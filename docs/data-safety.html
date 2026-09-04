@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dữ liệu thu thập — Media Hub &amp; Winnow</title>
+<meta name="description" content="Bản khai an toàn dữ liệu của Media Hub (Android, com.mediahub.mobile): từng loại dữ liệu, có thu thập hay không, có chia sẻ hay không, dùng vào việc gì.">
+<link rel="icon" href="./assets/winnow.png">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <a class="home" href="./"><img src="./assets/winnow.png" alt=""> Media Hub</a>
+  <div class="links">
+    <a href="./">Trang chủ</a>
+    <a href="./privacy.html">Bảo mật</a>
+    <a href="./data-safety.html" aria-current="page">Dữ liệu thu thập</a>
+  </div>
+</div></nav>
+
+<main class="doc">
+
+<h1>Bản khai an toàn dữ liệu</h1>
+<p class="updated">
+  <b>Media Hub</b> · <code>com.mediahub.mobile</code> · phiên bản 1.17.2<br>
+  Cập nhật 04/09/2026 — tương ứng với mục <i>An toàn dữ liệu</i> trên Google Play
+</p>
+
+<div class="note">
+  Google Play định nghĩa <b>“thu thập”</b> là dữ liệu được chuyển ra khỏi thiết bị tới máy
+  chủ của nhà phát triển, và <b>“chia sẻ”</b> là chuyển cho bên thứ ba.
+  Media Hub <b>không thu thập bất kỳ loại dữ liệu nào</b>: chúng tôi không có máy chủ.
+  Việc chuyển dữ liệu cho bên thứ ba chỉ xảy ra khi chính bạn bật một tính năng AI trực
+  tuyến và xác nhận, bằng khoá API của riêng bạn.
+</div>
+
+<h2 id="tom-tat">Tóm tắt</h2>
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr><th>Câu hỏi</th><th>Trả lời</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Ứng dụng có thu thập hay chia sẻ dữ liệu người dùng không?</td>
+        <td><b>Không thu thập.</b> Chỉ chuyển cho bên thứ ba khi bạn chủ động dùng AI trực tuyến</td></tr>
+    <tr><td>Dữ liệu được mã hoá khi truyền?</td><td>Có — mọi kết nối dùng HTTPS</td></tr>
+    <tr><td>Người dùng yêu cầu xoá dữ liệu được không?</td>
+        <td>Có — xoá dữ liệu ứng dụng hoặc gỡ cài đặt là xoá sạch</td></tr>
+    <tr><td>Có tuân theo Chính sách gia đình của Play?</td>
+        <td>Ứng dụng không nhắm tới trẻ em và không thu thập dữ liệu của trẻ em</td></tr>
+    <tr><td>Đã được bên độc lập kiểm định bảo mật?</td><td class="no">Chưa</td></tr>
+    <tr><td>Có quảng cáo, mua hàng trong ứng dụng, hay analytics?</td><td class="no">Không có cả ba</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="chi-tiet">Từng loại dữ liệu</h2>
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr>
+      <th>Loại dữ liệu</th>
+      <th>Thu thập</th>
+      <th>Chia sẻ</th>
+      <th>Bắt buộc</th>
+      <th>Xử lý ở đâu, để làm gì</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Ảnh và video</b></td>
+      <td class="no">Không</td>
+      <td>Chỉ khi bạn dùng AI trực tuyến</td>
+      <td class="no">Tuỳ chọn</td>
+      <td>
+        Đọc trên máy để hiển thị, sắp xếp, chỉnh sửa. Chỉ rời khỏi máy khi bạn dùng
+        <i>mô tả ảnh</i>, <i>hỏi AI về ảnh</i> hoặc <i>chỉnh ảnh bằng AI</i> — gửi thẳng tới
+        nhà cung cấp bạn chọn, bằng khoá API của bạn.
+      </td>
+    </tr>
+    <tr>
+      <td><b>Tệp âm thanh</b></td>
+      <td class="no">Không</td>
+      <td class="no">Không</td>
+      <td class="no">Tuỳ chọn</td>
+      <td>Đọc trên máy để duyệt và phát nhạc. Không bao giờ rời khỏi thiết bị.</td>
+    </tr>
+    <tr>
+      <td><b>Tệp và tài liệu khác</b></td>
+      <td class="no">Không</td>
+      <td class="no">Không</td>
+      <td class="no">Tuỳ chọn</td>
+      <td>Chỉ khi bạn tự chọn tệp qua trình chọn của hệ thống. Xử lý cục bộ.</td>
+    </tr>
+    <tr>
+      <td><b>Vị trí trong ảnh (EXIF GPS)</b></td>
+      <td class="no">Không</td>
+      <td>Chỉ nếu bạn gửi chính ảnh đó cho AI trực tuyến</td>
+      <td class="no">Tuỳ chọn</td>
+      <td>
+        Đọc từ chính tệp ảnh của bạn để hiển thị và sắp xếp. Ứng dụng
+        <b>không xin quyền vị trí</b> và không theo dõi vị trí thời gian thực.
+      </td>
+    </tr>
+    <tr>
+      <td><b>Ảnh chụp từ máy ảnh</b></td>
+      <td class="no">Không</td>
+      <td class="no">Không</td>
+      <td class="no">Tuỳ chọn</td>
+      <td>
+        Máy ảnh chỉ bật khi bạn mở tính năng quét mã QR. Khung hình được xử lý ngay trên máy
+        và không được lưu lại.
+      </td>
+    </tr>
+    <tr>
+      <td><b>Dữ liệu sinh trắc học</b></td>
+      <td class="no">Không</td>
+      <td class="no">Không</td>
+      <td class="no">Tuỳ chọn</td>
+      <td>
+        Hệ điều hành Android xác thực và chỉ trả về kết quả đúng/sai. Ứng dụng không nhìn
+        thấy và không lưu vân tay.
+      </td>
+    </tr>
+    <tr>
+      <td><b>Khoá API do bạn nhập</b></td>
+      <td class="no">Không</td>
+      <td>Gửi tới đúng nhà cung cấp phát hành nó</td>
+      <td class="no">Tuỳ chọn</td>
+      <td>
+        Lưu trong Android Keystore. Chỉ dùng để xác thực yêu cầu tới nhà cung cấp AI mà
+        chính bạn đã chọn.
+      </td>
+    </tr>
+    <tr>
+      <td><b>Thiết lập trong ứng dụng</b><br>(yêu thích, nhãn, bộ sưu tập)</td>
+      <td class="no">Không</td>
+      <td class="no">Không</td>
+      <td class="no">Tuỳ chọn</td>
+      <td>Lưu cục bộ bằng cơ chế lưu trữ của Android.</td>
+    </tr>
+    <tr>
+      <td><b>Danh tính cá nhân</b><br>(tên, email, số điện thoại, danh bạ)</td>
+      <td class="no">Không</td>
+      <td class="no">Không</td>
+      <td class="no">—</td>
+      <td>Ứng dụng không có tài khoản và không hỏi những thông tin này.</td>
+    </tr>
+    <tr>
+      <td><b>Định danh thiết bị, định danh quảng cáo</b></td>
+      <td class="no">Không</td>
+      <td class="no">Không</td>
+      <td class="no">—</td>
+      <td>Không đọc, không sinh ra, không có bộ công cụ quảng cáo nào trong ứng dụng.</td>
+    </tr>
+    <tr>
+      <td><b>Hành vi sử dụng, nhật ký sự cố</b></td>
+      <td class="no">Không</td>
+      <td class="no">Không</td>
+      <td class="no">—</td>
+      <td>Không có analytics, không có báo cáo sự cố tự động.</td>
+    </tr>
+    <tr>
+      <td><b>Địa chỉ IP</b></td>
+      <td class="no">Không</td>
+      <td>GitHub thấy khi kiểm tra cập nhật</td>
+      <td class="no">Tuỳ chọn</td>
+      <td>
+        Hệ quả kỹ thuật không tránh được của mọi yêu cầu mạng. Chúng tôi không đọc và không
+        lưu nhật ký đó.
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="ai-tren-may">Vì sao AI không làm phát sinh thu thập dữ liệu</h2>
+<p>
+  Tính năng phân loại thông minh — nhận diện khuôn mặt, gắn nhãn chủ đề, tách nền để làm
+  sticker — chạy bằng Google ML Kit ở chế độ <b>on-device</b>. Mô hình nằm sẵn trong ứng
+  dụng và hoạt động cả khi máy không có mạng. Ảnh không được tải lên bất cứ đâu để làm
+  việc này, và kết quả (nhãn, nhóm, khuôn mặt) chỉ lưu trên máy bạn.
+</p>
+<p>
+  Các tính năng AI <b>trực tuyến</b> là một nhóm tách riêng, mặc định tắt. Chúng chỉ hoạt
+  động sau khi bạn tự tạo khoá API tại nhà cung cấp và nhập vào ứng dụng. Khi đó ảnh đi
+  <b>thẳng</b> từ máy bạn tới nhà cung cấp đó — không qua hệ thống nào của chúng tôi.
+</p>
+
+<h2 id="winnow">Winnow trên Windows</h2>
+<p>
+  Winnow không phát hành trên Google Play và không nằm trong bản khai ở trên. Mức thu thập
+  dữ liệu của nó là <b>không có gì</b>: mã nguồn không chứa lệnh gọi mạng nào, mọi thứ nằm
+  trong tệp danh mục cục bộ tại <code>%LOCALAPPDATA%\Winnow</code>. Mã nguồn công khai tại
+  <a href="https://github.com/mittohoa/media-tool">github.com/mittohoa/media-tool</a> để bạn
+  tự kiểm chứng.
+</p>
+
+<h2 id="lien-he">Liên hệ</h2>
+<p>
+  Thấy một dòng trong bảng trên không khớp với hành vi thật của ứng dụng? Đó là lỗi cần
+  sửa, xin báo cho chúng tôi:
+  <a href="mailto:mittohoa@gmail.com">mittohoa@gmail.com</a> hoặc
+  <a href="https://github.com/mittohoa/media-tool/issues">mở issue trên GitHub</a>.
+  Chính sách đầy đủ: <a href="./privacy.html">Chính sách bảo mật</a>.
+</p>
+
+<h2 id="english">English summary</h2>
+<p>
+  <b>Media Hub</b> collects no user data. We run no server, so nothing is transmitted to us:
+  no account, no analytics, no crash reporting, no advertising or advertising identifiers,
+  and no real-time location. Photos, videos, audio and settings stay on the device.
+</p>
+<p>
+  Smart categorisation (face detection, subject labels, background removal) runs on-device
+  through Google ML Kit and works offline. Optional online AI features are off by default;
+  once you enter your own API key, the image or prompt you select is sent directly from your
+  device to the provider you chose, never through us. The update check contacts GitHub,
+  which sees your IP address as any web request would. All network traffic uses HTTPS, and
+  clearing the app's data or uninstalling removes everything.
+</p>
+
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Media Hub</span>
+  <div class="links">
+    <a href="./">Trang chủ</a>
+    <a href="./privacy.html">Chính sách bảo mật</a>
+    <a href="https://github.com/mittohoa/media-tool">Mã nguồn</a>
+  </div>
+</div></footer>
+
+</body>
+</html>

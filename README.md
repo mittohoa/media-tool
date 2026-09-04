@@ -2,6 +2,10 @@
 
 *tìm ảnh trùng mà không xoá gì*
 
+**[Tải bản cài Windows](https://github.com/mittohoa/media-tool/releases/latest/download/Winnow-Setup.exe)**
+· [bản chạy thẳng (.zip)](https://github.com/mittohoa/media-tool/releases/latest/download/WinnowApp-win-Portable.zip)
+· [trang giới thiệu](https://mittohoa.github.io/media-tool/)
+
 
 Tìm ảnh trùng trên tập dữ liệu lớn, rải rác nhiều ổ đĩa, trên Windows.
 

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Hub — Winnow cho Windows &amp; Media Hub cho Android</title>
+<meta name="description" content="Hai công cụ cho thư viện ảnh: Winnow tìm ảnh trùng trên Windows, Media Hub quản lý ảnh/video/nhạc trên Android. Tải APK, bản cài Windows.">
+<link rel="icon" href="./assets/winnow.png">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <a class="home" href="./"><img src="./assets/winnow.png" alt=""> Media Hub</a>
+  <div class="links">
+    <a href="#winnow">Winnow</a>
+    <a href="#mobile">Android</a>
+    <a href="./privacy.html">Bảo mật</a>
+    <a href="./data-safety.html">Dữ liệu thu thập</a>
+    <a href="https://github.com/mittohoa/media-tool">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="badge">🗂️ Ảnh của bạn, ở lại trên máy của bạn</span>
+  <h1>Hai công cụ cho <span class="grad">thư viện ảnh</span> của bạn</h1>
+  <p class="lead">
+    <b>Winnow</b> dọn ảnh trùng trên Windows mà không xoá gì.
+    <b>Media Hub</b> quản lý ảnh, video và nhạc trên Android.
+    Cả hai đều làm việc ngay trên thiết bị — không tài khoản, không máy chủ của chúng tôi.
+  </p>
+</div></header>
+
+<section><div class="wrap">
+  <h2 class="h2">Tải về</h2>
+  <p class="sub">Chọn nền tảng bạn đang dùng.</p>
+
+  <div class="apps">
+
+    <article class="app" id="winnow">
+      <div class="head">
+        <img src="./assets/winnow.png" alt="Biểu tượng Winnow">
+        <div>
+          <h3>Winnow</h3>
+          <div class="plat">Windows 10/11 · 64-bit · v1.1.1</div>
+        </div>
+      </div>
+      <span class="tag">Máy tính</span>
+      <p>
+        Tìm ảnh trùng trên tập dữ liệu lớn rải rác nhiều ổ đĩa — kể cả những bản
+        <b>đã bị xoá metadata</b>, thứ mà mọi tool dựa trên hash file đều bỏ sót.
+      </p>
+      <ul>
+        <li>So pixel sau khi giải mã, không so byte file</li>
+        <li>Chuyển file vào khu cách ly chứ không xoá; hoàn tác được 14 ngày</li>
+        <li>Cứu EXIF từ bản sắp loại sang bản giữ, không đổi một pixel nào</li>
+        <li>Chạy hoàn toàn ngoại tuyến — không có một dòng mã gọi mạng</li>
+      </ul>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://github.com/mittohoa/media-tool/releases/latest/download/Winnow-Setup.exe">⬇️ Tải bản cài Windows</a>
+        <a class="btn btn-ghost" href="https://github.com/mittohoa/media-tool/releases/latest/download/WinnowApp-win-Portable.zip">Bản chạy thẳng (.zip)</a>
+      </div>
+      <p class="hint">
+        Bản cài đặt cho từng người dùng: không cần quyền quản trị, không cần cài .NET.
+        Mã nguồn mở tại <a href="https://github.com/mittohoa/media-tool">mittohoa/media-tool</a>.
+      </p>
+    </article>
+
+    <article class="app" id="mobile">
+      <div class="head">
+        <img src="./assets/mediahub.png" alt="Biểu tượng Media Hub">
+        <div>
+          <h3>Media Hub</h3>
+          <div class="plat">Android 7.0 trở lên · v1.17.2</div>
+        </div>
+      </div>
+      <span class="tag">Điện thoại</span>
+      <p>
+        Thư viện ảnh, video và nhạc gọn trong một app: dòng thời gian theo ngày,
+        phân loại thông minh, kho khoá bằng vân tay, và các tính năng AI tuỳ chọn.
+      </p>
+      <ul>
+        <li>Nhận diện khuôn mặt và gắn nhãn chủ đề chạy <b>ngay trên máy</b></li>
+        <li>Kho khoá mã hoá AES-256, mở bằng vân tay hoặc khoá màn hình</li>
+        <li>Xem, cắt, xoay, nén ảnh; phát video và nhạc nền</li>
+        <li>Không tài khoản, không quảng cáo, không analytics</li>
+      </ul>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://github.com/mittohoa/media-app/releases/latest/download/media-hub.apk">⬇️ Tải APK</a>
+        <a class="btn btn-ghost" aria-disabled="true" href="#mobile" title="Đang chờ duyệt trên Google Play">▶️ Google Play — sắp có</a>
+      </div>
+      <p class="hint">
+        Android sẽ hỏi cho phép cài từ nguồn này ở lần đầu — đó là bước bình thường
+        khi cài ngoài cửa hàng. Trang chi tiết:
+        <a href="https://mittohoa.github.io/media-app/">mittohoa.github.io/media-app</a>.
+      </p>
+    </article>
+
+  </div>
+</div></section>
+
+<section style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<div class="wrap">
+  <h2 class="h2">Dữ liệu của bạn đi đâu</h2>
+  <p class="sub">
+    Câu trả lời ngắn: gần như không đi đâu cả. Dưới đây là toàn bộ đường ra khỏi máy —
+    và chúng tôi không đứng ở đầu nào trong số đó.
+  </p>
+  <div class="grid3">
+    <div class="feat">
+      <div class="ic">📴</div>
+      <h3>Winnow không nối mạng</h3>
+      <p>
+        Không có mã gọi mạng trong mã nguồn. Danh mục ảnh nằm ở
+        <code>%LOCALAPPDATA%\Winnow</code> trên chính máy bạn.
+      </p>
+    </div>
+    <div class="feat">
+      <div class="ic">🧠</div>
+      <h3>AI trên máy là mặc định</h3>
+      <p>
+        Gắn nhãn, gom nhóm chủ đề và tách nền dùng Google ML Kit chạy on-device.
+        Ảnh không rời khỏi điện thoại.
+      </p>
+    </div>
+    <div class="feat">
+      <div class="ic">☁️</div>
+      <h3>Gửi ra ngoài thì phải bạn bấm</h3>
+      <p>
+        Chỉ các tính năng AI trực tuyến bạn tự bật mới gửi ảnh hoặc câu mô tả tới
+        nhà cung cấp bạn chọn, bằng khoá API của chính bạn.
+      </p>
+    </div>
+  </div>
+  <p class="hint" style="margin-top:22px">
+    Chi tiết đầy đủ: <a href="./privacy.html">Chính sách bảo mật</a> ·
+    <a href="./data-safety.html">Bản khai dữ liệu thu thập</a>
+  </p>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="h2">Winnow làm gì mà tool khác không làm</h2>
+  <p class="sub">
+    Xoá EXIF không đụng một pixel nào, nhưng làm đổi hoàn toàn hash của file.
+    Với tool so byte, hai bản của cùng một tấm ảnh trở thành hai tấm khác nhau.
+  </p>
+  <div class="grid3">
+    <div class="feat">
+      <div class="ic">1️⃣</div>
+      <h3>Trùng byte</h3>
+      <p>Cùng dung lượng và cùng xxHash128 của file. Bản copy y hệt, không sai sót.</p>
+    </div>
+    <div class="feat">
+      <div class="ic">2️⃣</div>
+      <h3>Trùng pixel</h3>
+      <p>
+        Giải mã ảnh rồi hash buffer pixel. Đây là tầng bắt được bản
+        <b>mất metadata</b> mà tầng 1 bỏ sót.
+      </p>
+    </div>
+    <div class="feat">
+      <div class="ic">3️⃣</div>
+      <h3>Gần trùng</h3>
+      <p>
+        Hash tri giác cộng bản đồ khác biệt, cộng giờ chụp EXIF để không nhầm hai
+        tấm chụp cách nhau một giây với một tấm lưu hai lần.
+      </p>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© 2026 Media Hub</span>
+  <div class="links">
+    <a href="./privacy.html">Chính sách bảo mật</a>
+    <a href="./data-safety.html">Dữ liệu thu thập</a>
+    <a href="https://github.com/mittohoa/media-tool">Mã nguồn</a>
+  </div>
+</div></footer>
+
+</body>
+</html>
