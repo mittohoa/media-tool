@@ -1,5 +1,9 @@
 # Khai biểu mẫu An toàn dữ liệu trên Google Play
 
+> **Chưa dùng tới.** Hiện chưa có kế hoạch phát hành `com.mediahub.mobile` lên Google Play.
+> Tài liệu này giữ lại để dùng khi nào có kế hoạch, và **sẽ cập nhật sau** — số phiên bản,
+> danh sách quyền và các mục trong biểu mẫu đều có thể đã đổi so với lúc viết (04/09/2026).
+
 Bảng tra để điền mục **Chính sách > An toàn dữ liệu** trong Play Console cho
 `com.mediahub.mobile`. Nội dung phải khớp với trang công bố
 [data-safety.html](./data-safety.html) — Google đối chiếu hai bên, lệch nhau là bị từ chối.
