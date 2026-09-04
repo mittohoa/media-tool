@@ -1,0 +1,79 @@
+<Window x:Class="MediaTool.App.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Winnow — where things are kept"
+        Height="470" Width="720" WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize" Background="{StaticResource Bg}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="{StaticResource BgPanel}" Padding="20,16"
+                BorderBrush="{StaticResource Line}" BorderThickness="0,0,0,1">
+            <StackPanel>
+                <TextBlock Text="Where things are kept" FontSize="17" FontWeight="SemiBold"/>
+                <TextBlock Foreground="{StaticResource TextDim}" FontSize="12" Margin="0,4,0,0"
+                           Text="Two folders matter: the small one that remembers your library, and the large one that holds files on their way out."/>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Row="1" Margin="20,18">
+
+            <!-- catalog -->
+            <TextBlock Text="CATALOG" FontSize="11" FontWeight="SemiBold"
+                       Foreground="{StaticResource TextDim}"/>
+            <TextBlock Foreground="{StaticResource TextDim}" FontSize="12" Margin="0,4,0,6"
+                       TextWrapping="Wrap"
+                       Text="What has been scanned, hashed and decided. Tens of megabytes, and hours of work to rebuild."/>
+            <DockPanel>
+                <Button Content="Change…" Click="OnPickCatalog" DockPanel.Dock="Right" Padding="14,5" Margin="8,0,0,0"/>
+                <TextBox x:Name="CatalogBox" IsReadOnly="True" Padding="8,6"/>
+            </DockPanel>
+            <TextBlock x:Name="CatalogNote" FontSize="11" Margin="0,5,0,0" TextWrapping="Wrap"
+                       Foreground="{StaticResource TextDim}"/>
+
+            <!-- quarantine -->
+            <TextBlock Text="QUARANTINE" FontSize="11" FontWeight="SemiBold" Margin="0,22,0,0"
+                       Foreground="{StaticResource TextDim}"/>
+            <TextBlock Foreground="{StaticResource TextDim}" FontSize="12" Margin="0,4,0,6"
+                       TextWrapping="Wrap"
+                       Text="Where files go instead of being deleted. Put it on the same drive as your photos and the move is instant; on another drive every file is copied in full."/>
+            <DockPanel>
+                <Button Content="Change…" Click="OnPickQuarantine" DockPanel.Dock="Right" Padding="14,5" Margin="8,0,0,0"/>
+                <TextBox x:Name="QuarantineBox" IsReadOnly="True" Padding="8,6"/>
+            </DockPanel>
+            <TextBlock x:Name="QuarantineNote" FontSize="11" Margin="0,5,0,0" TextWrapping="Wrap"/>
+
+            <!-- retention -->
+            <TextBlock Text="RETENTION" FontSize="11" FontWeight="SemiBold" Margin="0,22,0,0"
+                       Foreground="{StaticResource TextDim}"/>
+            <TextBlock Foreground="{StaticResource TextDim}" FontSize="12" Margin="0,4,0,6"
+                       TextWrapping="Wrap"
+                       Text="How long a batch must sit before it may be purged. Nothing is ever deleted automatically — purge is always something you ask for."/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="RetentionBox" Width="70" Padding="8,6"
+                         TextChanged="OnRetentionChanged"/>
+                <TextBlock Text="days" VerticalAlignment="Center" Margin="10,0,0,0"
+                           Foreground="{StaticResource TextDim}" FontSize="12"/>
+                <TextBlock x:Name="RetentionNote" VerticalAlignment="Center" Margin="16,0,0,0" FontSize="11"
+                           Foreground="{StaticResource Warn}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Border Grid.Row="2" Background="{StaticResource BgPanel}" Padding="20,14"
+                BorderBrush="{StaticResource Line}" BorderThickness="0,1,0,0">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                    <Button Content="Cancel" Click="OnCancel" Margin="0,0,8,0" Padding="18,6"/>
+                    <Button x:Name="SaveButton" Content="Save" Click="OnSave" Padding="24,6"/>
+                </StackPanel>
+                <TextBlock x:Name="FooterNote" VerticalAlignment="Center" FontSize="12"
+                           Foreground="{StaticResource TextDim}" TextTrimming="CharacterEllipsis"/>
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>

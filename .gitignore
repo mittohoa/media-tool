@@ -1,0 +1,29 @@
+# Build output
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+.vs/
+
+# Velopack packaging: stage/ is a full .NET runtime copy, releases/ holds
+# 70 MB installers. Both are rebuilt by build/pack.ps1 and belong in a
+# GitHub Release, not in git history.
+build/stage/
+build/releases/
+
+# Catalog and quarantine never belong in the repo: they hold the paths of
+# real photo libraries.
+*.db
+*.db-wal
+*.db-shm
+quarantine/
+manifest.csv
+plan.csv
+dupes.csv
+similar.csv
+
+# Signing material must stay in the Windows certificate store.
+*.pfx
+*.snk

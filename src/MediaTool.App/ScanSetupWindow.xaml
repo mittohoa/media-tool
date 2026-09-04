@@ -1,0 +1,158 @@
+<Window x:Class="MediaTool.App.ScanSetupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Winnow — choose what to scan"
+        Height="720" Width="880" WindowStartupLocation="CenterScreen"
+        Background="{StaticResource Bg}">
+
+    <Grid Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- header -->
+        <Border Grid.Row="0" Background="{StaticResource BgPanel}" Padding="20,16"
+                BorderBrush="{StaticResource Line}" BorderThickness="0,0,0,1">
+            <StackPanel>
+                <TextBlock Text="Choose what to scan" FontSize="17" FontWeight="SemiBold"/>
+                <TextBlock Foreground="{StaticResource TextDim}" FontSize="12" Margin="0,4,0,0"
+                           Text="Nothing outside these places is read. You can stop at any point and pick up where you left off."/>
+            </StackPanel>
+        </Border>
+
+        <!-- picker -->
+        <ScrollViewer x:Name="PickerPane" Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="20,16">
+            <StackPanel>
+
+                <TextBlock Text="DRIVES" FontSize="11" FontWeight="Bold"
+                           Foreground="{StaticResource TextDim}" Margin="0,0,0,8"/>
+
+                <ItemsControl x:Name="DriveList">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="{StaticResource BgCard}" CornerRadius="5" Padding="12,10" Margin="0,0,0,6"
+                                    BorderBrush="{StaticResource Line}" BorderThickness="1">
+                                <DockPanel>
+                                    <CheckBox IsChecked="{Binding Selected}" IsEnabled="{Binding CanSelect}"
+                                              VerticalAlignment="Center" Margin="0,0,12,0"/>
+                                    <TextBlock Text="{Binding SizeText}" DockPanel.Dock="Right"
+                                               Foreground="{StaticResource TextDim}" FontSize="12"
+                                               VerticalAlignment="Center" Margin="12,0,0,0"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Mount}" FontWeight="SemiBold" FontSize="13"/>
+                                            <TextBlock Text="{Binding Label}" Margin="10,0,0,0" FontSize="13"/>
+                                            <TextBlock Text="{Binding Kind}" Margin="10,0,0,0" FontSize="11"
+                                                       Foreground="{StaticResource TextDim}" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <TextBlock Text="{Binding Note}" FontSize="11" Margin="0,3,0,0"
+                                                   Foreground="{Binding NoteBrush}" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </DockPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <DockPanel Margin="0,20,0,8">
+                    <Button Content="Add folder…" Click="OnAddFolder" DockPanel.Dock="Right" Padding="12,5"/>
+                    <TextBlock Text="SPECIFIC FOLDERS" FontSize="11" FontWeight="Bold"
+                               Foreground="{StaticResource TextDim}" VerticalAlignment="Center"/>
+                </DockPanel>
+
+                <TextBlock x:Name="NoFoldersHint" FontSize="12" Foreground="{StaticResource TextDim}"
+                           Text="None. Add a folder to scan just part of a drive — faster, and easier to review."/>
+
+                <ItemsControl x:Name="FolderList">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="{StaticResource BgCard}" CornerRadius="5" Padding="12,8" Margin="0,0,0,5"
+                                    BorderBrush="{StaticResource Line}" BorderThickness="1">
+                                <DockPanel>
+                                    <Button Content="✕" Click="OnRemoveFolder" DockPanel.Dock="Right"
+                                            Padding="8,2" Tag="{Binding Path}" FontSize="11"/>
+                                    <CheckBox IsChecked="{Binding Selected}" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                                    <TextBlock Text="{Binding Path}" FontSize="12" VerticalAlignment="Center"
+                                               TextTrimming="CharacterEllipsis"/>
+                                </DockPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <TextBlock Text="SKIP ANY PATH CONTAINING" FontSize="11" FontWeight="Bold"
+                           Foreground="{StaticResource TextDim}" Margin="0,20,0,8"/>
+                <TextBlock FontSize="11" Foreground="{StaticResource TextDim}" TextWrapping="Wrap" Margin="0,0,0,8"
+                           Text="Website assets and source trees look like photo libraries to any scanner. Excluding them here is usually the difference between hundreds of decisions and thousands."/>
+
+                <DockPanel Margin="0,0,0,8">
+                    <Button Content="Add" Click="OnAddExclusion" DockPanel.Dock="Right" Padding="14,5" Margin="8,0,0,0"/>
+                    <TextBox x:Name="ExclusionInput" KeyDown="OnExclusionKeyDown"
+                             Background="{StaticResource BgCard}" Foreground="{StaticResource Text}"
+                             BorderBrush="{StaticResource Line}" BorderThickness="1" Padding="8,6" FontSize="12"
+                             CaretBrush="{StaticResource Text}"/>
+                </DockPanel>
+
+                <ItemsControl x:Name="ExclusionList">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="{StaticResource BgCard}" CornerRadius="12" Padding="10,4" Margin="0,0,6,6"
+                                    BorderBrush="{StaticResource Line}" BorderThickness="1">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding}" FontSize="12" VerticalAlignment="Center"/>
+                                    <Button Content="✕" Click="OnRemoveExclusion" Tag="{Binding}"
+                                            Padding="6,0" Margin="8,0,0,0" FontSize="10" BorderThickness="0"
+                                            Background="Transparent"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- progress, shown in place of the picker once scanning starts -->
+        <Grid x:Name="ProgressPane" Grid.Row="1" Visibility="Collapsed" Margin="40">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock x:Name="StageText" Text="" FontSize="20" FontWeight="SemiBold"/>
+                <TextBlock x:Name="StageDetail" Text="" FontSize="13" Margin="0,8,0,0"
+                           Foreground="{StaticResource TextDim}"/>
+
+                <Border Background="{StaticResource BgCard}" CornerRadius="4" Height="8" Margin="0,22,0,0">
+                    <Border x:Name="ProgressFill" Background="{StaticResource Accent}" CornerRadius="4"
+                            HorizontalAlignment="Left" Width="0"/>
+                </Border>
+
+                <TextBlock x:Name="StageCounter" Text="" FontSize="11" Margin="0,10,0,0"
+                           Foreground="{StaticResource TextDim}"/>
+
+                <TextBlock FontSize="12" Margin="0,28,0,0" TextWrapping="Wrap"
+                           Foreground="{StaticResource TextDim}"
+                           Text="Stopping is safe. Every stage records what it has finished, so starting again continues from there rather than repeating the work."/>
+            </StackPanel>
+        </Grid>
+
+        <!-- footer -->
+        <Border Grid.Row="2" Background="{StaticResource BgPanel}" Padding="20,14"
+                BorderBrush="{StaticResource Line}" BorderThickness="0,1,0,0">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                    <CheckBox x:Name="FreshStart" VerticalAlignment="Center" Margin="0,0,16,0"
+                              Checked="OnFreshStartChanged" Unchecked="OnFreshStartChanged"
+                              Content="Forget previous scans"
+                              ToolTip="Sets the current catalog aside and scans these places into an empty one. The old catalog is kept, not deleted."/>
+                    <Button x:Name="CancelButton" Content="Cancel" Click="OnCancel" Margin="0,0,8,0"/>
+                    <Button x:Name="StartButton" Content="Start scan" Click="OnStart" Padding="20,6"/>
+                </StackPanel>
+                <TextBlock x:Name="SummaryText" Text="" FontSize="12" VerticalAlignment="Center"
+                           Foreground="{StaticResource TextDim}"/>
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>
